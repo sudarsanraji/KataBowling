@@ -24,4 +24,15 @@ class FramesBuilder {
     }
     return frames;
   } 
+  private FrameDTO createBonusFrame(String[] records, int index) {
+    String firstRecord = records[index++];
+    String secondRecord = EMPTY;
+    if (records.length > index) {
+      secondRecord = records[index];
+    }
+    FrameDTO frame = new FrameDTO(firstRecord, secondRecord);
+    frame.setBonus(true);
+    return frame;
+  }
+  
 }
