@@ -10,5 +10,7 @@ public class ScoreCalculator {
 	    }
 	    return totalScore;
 	  }
-	  
+	  private int calculateEachFrame(List<FrameDTO> frames, int index) {
+		  FrameDTO frame = frames.get(index);
+	  }
 }

@@ -34,5 +34,18 @@ class FramesBuilder {
     frame.setBonus(true);
     return frame;
   }
-  
+  private FrameDTO buildFrame(String[] records, int index) {
+	  FrameDTO frame = new FrameDTO();
+    frame.setFirst(records[index]);
+    frame.setBonus(false);
+    if (!isStrike(records[index])) {
+      frame.setSecond(records[index + 1]);
+    } else {
+      frame.setUpComingRecords(records[index + 1] + records[index + 2]);
+    }
+    if (frame.isSpare()) {
+      frame.setUpComingRecords(records[index + 2]);
+    }
+    return frame;
+  }
 }

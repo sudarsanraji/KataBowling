@@ -18,8 +18,11 @@ public class GameTest {
 	 @Test
 	  public void allStrikes() throws Exception {
 	    int score = bowlingGame.getScore("XXXXXXXXXXXX");
-
 	    assertThat(score, is(300));
 	  }
-
+	  @Test
+	  public void allSpares() throws Exception {
+	    int score = bowlingGame.getScore("5/5/5/5/5/5/5/5/5/5/5");
+	    assertThat(score, is(150));
+	  }
 }

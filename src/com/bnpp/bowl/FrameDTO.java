@@ -15,12 +15,21 @@ public class FrameDTO {
 	    this.first = first;
 	    this.second = second;
 	  }
-
 	  FrameDTO() {
 
 	  }
-
 	  int calculateScore() {
 	    return isSpare() || isStrike() ? 10 : getFirstScore() + getSecondScore();
+	  }
+	  private int getSecondScore() {
+	    return EMPTY.equals(second) || LINE.equals(second) ? 0 : parseInt(second);
+	  }
+
+	  boolean isStrike() {
+	    return STRIKE_SIGNAL.equals(first);
+	  }
+
+	  boolean isSpare() {
+	    return SPARE_SIGNAL.equals(second);
 	  }
 }
