@@ -51,4 +51,7 @@ class FramesBuilder {
   private boolean isStrike(String record) {
     return STRIKE_SIGNAL.equals(record);
   }
+  private boolean hasBonus(int index, int length) {
+    return length > index;
+  }
 }

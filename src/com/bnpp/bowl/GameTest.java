@@ -28,7 +28,11 @@ public class GameTest {
 	  @Test
 	  public void ninePinsDownEachRound() throws Exception {
 	    int score = bowlingGame.getScore("9-9-9-9-9-9-9-9-9-9-9");
-
 	    assertThat(score, is(90));
 	  }
+	  @Test
+	  public void compoundedCase() throws Exception {
+	    int score = bowlingGame.getScore("125-3/XX12345123XXX");
+	    assertThat(score, is(113));
+	  } 
 }
