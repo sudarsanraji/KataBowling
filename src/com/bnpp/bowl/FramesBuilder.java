@@ -48,4 +48,7 @@ class FramesBuilder {
     }
     return frame;
   }
+  private boolean isStrike(String record) {
+    return STRIKE_SIGNAL.equals(record);
+  }
 }

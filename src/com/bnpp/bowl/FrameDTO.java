@@ -32,4 +32,15 @@ public class FrameDTO {
 	  boolean isSpare() {
 	    return SPARE_SIGNAL.equals(second);
 	  }
+int getFirstScore() {
+	    return EMPTY.equals(first) || LINE.equals(first) ? 0 : parseInt(first);
+	  }
+
+	  void setBonus(boolean bonus) {
+	    this.bonus = bonus;
+	  }
+
+	  boolean isBonus() {
+	    return bonus;
+	  }	  
 }

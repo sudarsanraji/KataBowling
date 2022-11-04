@@ -1,7 +1,5 @@
 package com.bnpp.bowl;
-
 import java.util.List;
-
 public class ScoreCalculator {
 	int calculate(List<FrameDTO> frames) {
 	    int totalScore = 0;
@@ -12,5 +10,15 @@ public class ScoreCalculator {
 	  }
 	  private int calculateEachFrame(List<FrameDTO> frames, int index) {
 		  FrameDTO frame = frames.get(index);
+	    if (frame.isBonus()) {
+	      return 0;
+	    }
+	    if (frame.isSpare()) {
+	      return frame.calculateScore() + frame.getBonus();
+	    }
+	    if (frame.isStrike()) {
+	      return frame.calculateScore() + frame.getBonus();
+	    }
+	    return frame.calculateScore();
 	  }
 }
